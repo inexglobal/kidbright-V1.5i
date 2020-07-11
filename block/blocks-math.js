@@ -146,6 +146,86 @@ Blockly.Blocks['math_pow'] = {
 		});
 	}
 }
+Blockly.Blocks['math_constrain'] = {
+  /**
+   * Block for constraining a number between two limits.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+	  "type": "math_constrain",
+      "message0": "constrain %1 low %2 high %3",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VALUE",
+          "check":"Number"
+        },
+        {
+          "type": "input_value",
+          "name": "LOW",
+          "check": "Number"
+        },
+        {
+          "type": "input_value",
+          "name": "HIGH",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,
+	"output": "Number",
+	"colour": Blockly.Msg.MATH_HUE,
+	"tooltip": "Constrains a number to be within a range",
+	"helpUrl": "https://www.arduino.cc/reference/en/language/functions/math/constrain/"
+    });
+  }
+  //TODO: a getBlockType of the same type as the inputs.
+}
+Blockly.Blocks['math_map'] = {
+  /**
+   * Block for Re-maps a number from one range to another. That is, a value of fromLow would get mapped to toLow, a value of fromHigh to toHigh, values in-between to values in-between.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+	  "type": "math_map",
+      "message0": "map%1fromLow%2fromHigh%3toLow%4toHigh%5",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "VALUE",
+          "check":"Number"
+        },
+        {
+          "type": "input_value",
+          "name": "FROMLOW",
+          "check": "Number"
+        },
+        {
+          "type": "input_value",
+          "name": "FROMHIGH",
+          "check": "Number"
+        },
+        {
+          "type": "input_value",
+          "name": "TOLOW",
+          "check": "Number"
+        },
+		{
+          "type": "input_value",
+          "name": "TOHIGH",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,
+	"output": "Number",
+	"colour": Blockly.Msg.MATH_HUE,
+	"tooltip": "Re-maps a number from one range to another",
+	"helpUrl": "https://www.arduino.cc/reference/en/language/functions/math/map/"
+    });
+  }
+  //TODO: a getBlockType of the same type as the inputs.
+}
 Blockly.Blocks['math_number_property'] = {
 	init: function () {
 		this.jsonInit({

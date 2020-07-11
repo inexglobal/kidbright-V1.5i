@@ -293,6 +293,64 @@ module.exports = {
         "mcp7941_rtc_get_month",
         "mcp7941_rtc_get_year"
       ]
-    }
+    },
+	{
+            name : 'Math',
+            color : '230',
+            index : 40,
+            icon : '/static/icons/calculator.png',
+            blocks : [
+                   {
+                    xml : 
+                    `<block type="math_constrain">
+                        <value name="VALUE">
+                            <shadow type="math_number">
+                                <field name="NUM">50</field>
+                            </shadow>
+                        </value>
+						<value name="LOW">
+                            <shadow type="math_number">
+                                <field name="NUM">0</field>
+                            </shadow>
+                        </value>
+						<value name="HIGH">
+                            <shadow type="math_number">
+                                <field name="NUM">100</field>
+                            </shadow>
+                        </value>
+                    </block>`
+                },
+				{
+                    xml : 
+                    `<block type="math_map">
+                        <value name="VALUE">
+                            <shadow type="math_number">
+                                <field name="NUM">50</field>
+                            </shadow>
+                        </value>
+						<value name="FROMLOW">
+                            <shadow type="math_number">
+                                <field name="NUM">0</field>
+                            </shadow>
+                        </value>
+						<value name="FROMHIGH">
+                            <shadow type="math_number">
+                                <field name="NUM">4095</field>
+                            </shadow>
+                        </value>
+						<value name="TOLOW">
+                            <shadow type="math_number">
+                                <field name="NUM">0</field>
+                            </shadow>
+                        </value>
+						<value name="TOHIGH">
+                            <shadow type="math_number">
+                                <field name="NUM">100</field>
+                            </shadow>
+                        </value>
+                    </block>`
+                }
+            ]
+        }
   ]
 };

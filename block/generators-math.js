@@ -14,7 +14,23 @@ Blockly.JavaScript['math_random_int'] = function(block) {
 	}
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
-
+Blockly.JavaScript['math_constrain'] = function(block) {
+    var arg1 = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+    var arg2 = Blockly.JavaScript.valueToCode(block, 'LOW', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var arg3 = Blockly.JavaScript.valueToCode(block, 'HIGH', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var code =  `constrain(${arg1}, ${arg2}, ${arg3})`;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['math_map'] = function(block) {
+    var arg1 = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+    var arg2 = Blockly.JavaScript.valueToCode(block, 'FROMLOW', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var arg3 = Blockly.JavaScript.valueToCode(block, 'FROMHIGH', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var arg4 = Blockly.JavaScript.valueToCode(block, 'TOLOW', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var arg5 = Blockly.JavaScript.valueToCode(block, 'TOHIGH', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+	var code =  `map(${arg1},${arg2},${arg3},${arg4},${arg5})`;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+	
+};
 Blockly.JavaScript['math_pow'] = function(block) {
     var arg1 = Blockly.JavaScript.valueToCode(block, 'NUM1', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
     var arg2 = Blockly.JavaScript.valueToCode(block, 'NUM2', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
