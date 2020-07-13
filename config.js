@@ -8,5 +8,5 @@ module.exports = {
   email: "Teerawut@inex.co.th",
   git: "https://github.com/inexglobal/kidbright-V1.5i/",
   image: "/static/kbide.jpg",
-  version: "1.0.0",
+  version: "1.0.1",
 };

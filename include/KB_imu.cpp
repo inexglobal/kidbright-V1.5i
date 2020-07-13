@@ -369,9 +369,9 @@ int KB_imu::get_acc_xyz(int index_a){
   if(index_a==0){
     return -accelerometer[index_a];
   }else if(index_a==1){
-	return  accelerometer[index_a];
+	return -accelerometer[index_a];
   }else if(index_a==2){
-	return  accelerometer[index_a];
+	return -accelerometer[index_a];
   }else if(index_a==3){
 	return  sqrt(pow(accelerometer[0], 2) + pow(accelerometer[1], 2) + pow(accelerometer[2], 2));
   }
